@@ -15,7 +15,7 @@ namespace VisualStudio2015
         static readonly int BLOCK_SIZE = 32;
         static int mTimer;
         static Block block = new Block();
-        static Three_Blocks three_blocks = new Three_Blocks();
+        static Three_Blocks three_blocks = new Three_Blocks(2);
         static int background;
 
         static void Init()
@@ -39,14 +39,24 @@ namespace VisualStudio2015
             
             block.LBlocks();//ブロックの読み込み
             //background = DX.LoadGraph("Images\\frame\\background.png");//backgroundは8:15にしなければならない
+
         }
 
         static void Draw()
         {
+            DX.ClearDrawScreen();
+
+
             block.DBlocks(0,0,3);
-            //DX.DrawGraph(62, 62, background, DX.FALSE);
             three_blocks.DBlocks(15, 15);
+            //DX.DrawGraph(62, 62, background, DX.FALSE);
+
+
             DX.ScreenFlip();
+        }
+        static void Update()
+        {
+            three_blocks.Fall();
         }
 
         static void Loop()
@@ -56,16 +66,18 @@ namespace VisualStudio2015
             {
                 mTimer += TIMER_INTERVAL;
                 //DX.WaitTimer
+                Update();
+                Draw();
 
-               
+
             }
         }
 
+    
         static void Main()//メイン関数
         {
             Init();
             Load();
-            Draw();
             Loop();
 
             // ＤＸライブラリの後始末

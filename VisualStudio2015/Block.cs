@@ -25,7 +25,7 @@ namespace VisualStudio2015
 
         public void DBlocks(int begin_X, int Begin_Y, byte block_id)//ブロックの描画、block_idはブロック番号
         {
-            DX.DrawExtendGraph(begin_X, Begin_Y, begin_X + 32, Begin_Y + 32, blocks[block_id], DX.FALSE);
+            DX.DrawExtendGraph(begin_X, Begin_Y, begin_X + 32, Begin_Y + 32, blocks[block_id], DX.TRUE);
         }
     }
 }
