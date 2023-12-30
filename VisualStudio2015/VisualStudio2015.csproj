@@ -49,6 +49,7 @@
     <Compile Include="Block.cs" />
     <Compile Include="3Blocks.cs" />
     <Compile Include="DxDLL.cs" />
+    <Compile Include="Field.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

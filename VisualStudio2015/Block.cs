@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace VisualStudio2015
 {
-    public class Block
+    internal class Block
     {
-        protected static int[] blocks = new int[6];//ブロックの種類
+        internal static int[] blocks = new int[6];//ブロックの種類
 
-        public void LBlocks()//ブロックの読み込み
+
+        internal void LBlocks()//ブロックの読み込み
         {
             for (int i = 0; i < 6; i++)
             {
@@ -23,7 +24,7 @@ namespace VisualStudio2015
 
         }
 
-        public void DBlocks(int begin_X, int Begin_Y, byte block_id)//ブロックの描画、block_idはブロック番号
+        internal void DBlocks(int begin_X, int Begin_Y, byte block_id)//ブロックの描画、block_idはブロック番号
         {
             DX.DrawExtendGraph(begin_X, Begin_Y, begin_X + 32, Begin_Y + 32, blocks[block_id], DX.TRUE);
         }
